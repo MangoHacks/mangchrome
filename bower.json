@@ -1,0 +1,12 @@
+{
+  "name": "mangohacks",
+  "private": true,
+  "version": "0.0.0",
+  "dependencies": {
+    "socket.io-client": "~1.4.5"
+  },
+  "devDependencies": {
+    "chai": "~3.5.0",
+    "mocha": "~2.4.5"
+  }
+}
