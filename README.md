@@ -1,4 +1,4 @@
-!(MangoHacks Logo)[http://mangohacks.com/apple-icon-180x180.png]
+![MangoHacks Logo](http://mangohacks.com/apple-icon-180x180.png)
 # mangchrome
 
 [![forthebadge](http://forthebadge.com/images/badges/fuck-it-ship-it.svg)](http://forthebadge.com)
