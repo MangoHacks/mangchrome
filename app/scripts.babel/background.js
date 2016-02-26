@@ -1,6 +1,6 @@
 'use strict';
-// var socket = io('http://app.teambwb.com');
-var socket = io('http://localhost:8081')
+var socket = io('http://app.teambwb.com');
+// var socket = io('http://localhost:8081')
 var num = 0;
 
 socket.on('connect', function(){
