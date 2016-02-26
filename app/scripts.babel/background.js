@@ -1,20 +1,19 @@
 'use strict';
-var socket = io('http://localhost:3000');
-
-
+// var socket = io('http://app.teambwb.com');
+var socket = io('http://localhost:8081')
 var num = 0;
 
 socket.on('connect', function(){
-	console.log(' extension is connected to the client connected')
+	console.log(' extension is connected to the socket server')
 });
 
-socket.emit('message')
+socket.emit('message');
 
 socket.on('notify', (msg) => {
 	chrome.notifications.create('mango', {
 		type: 'basic',
 		title: 'MangoHacks',
-		message: 'Come get some Mangos!!!',
+		message: msg.message || msg,
 		iconUrl: 'http://mangohacks.com/apple-icon-72x72.png'
 	}, (e) =>{
 		num++

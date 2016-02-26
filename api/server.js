@@ -28,19 +28,18 @@ io.on('connection', function(socket){
 app.get('/notify', function(rew, res){
 	console.log('we are hitting notify');
 	io.emit('notify', 'this notification is being triggered by the /notify endpoint');
-	return res.send({
-		status: 'success'
+	return res.json({
+		message: 'this notification is being triggered by the /notify endpoint'
 	});
 
 });
 
 app.post('/notify', function(req, res){
+	console.log(req, req.body)
 	io.emit('notify', req.body);
-	return res.json({
-		message: 'Mesage being hailed to all Mango Trapathon Trapers'
-	});
+	return res.json(req.body);
 });
 
-http.listen(3000, function(){
+http.listen(8081, function(){
 	console.log('listening on *:3000');
 });
