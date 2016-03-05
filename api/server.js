@@ -14,11 +14,11 @@ app.get('/', function(req, res){
 
 io.on('connection', function(socket){
 	console.log('a user connected');
-
-	// setInterval(() => {
-	// 	console.log('alerting');
-	// 	socket.emit('notify', 'Welcome to MangoHacks :)');
-	// }, 10000);
+	
+	setInterval(() => {
+		console.log('alerting');
+		socket.emit('notify', 'Welcome to MangoHacks :)');
+	}, 45000);
 
 	socket.on('disconnect', function(){
 		console.log('user disconnected');
@@ -31,7 +31,13 @@ app.get('/notify', function(rew, res){
 	return res.json({
 		message: 'this notification is being triggered by the /notify endpoint'
 	});
+});
 
+app.get('/status', function(req, res){
+	io.emit('report', 'Here\'s the progress so far. Keep it up.');
+	return res.json({
+		message: 'Hackathon progress has been sent to trapathon trappers'
+	});
 });
 
 app.post('/notify', function(req, res){
@@ -40,6 +46,6 @@ app.post('/notify', function(req, res){
 	return res.json(req.body);
 });
 
-http.listen(8081, function(){
-	console.log('listening on *:3000');
+http.listen(8088, function(){
+	console.log('listening on *:8088');
 });
